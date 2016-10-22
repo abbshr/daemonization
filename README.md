@@ -1,15 +1,15 @@
 How to daemonize a process
 ===
 
-in short:
+**TL; DR: detach the (daemon) process (via setsid)**
 
 1. In parent process: fork
 2. In parent process: exit
-3. In child process: setuid
+3. In child process: setsid
    maybe...  
    3.1. In child process: fork again => child process B  
    3.2. In child process: exit  
-   3.3. In child process B: setuid  
+   3.3. In child process B: setsid  
 
 4. In child process (maybe B): set umask
 5. In child process (maybe B): set I/O redirection
